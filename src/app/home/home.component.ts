@@ -8,8 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  numItems: number = 4;
+
+  botonTexto :string ="Agregar item";
+
+  meta: string= "Mi primera meta";
+
+  goals:any = [];
 
   ngOnInit(): void {
+    this.numItems = this.goals.length;
   }
+
+  agregarItem(){
+    this.goals.push(this.meta);
+    this.meta = "";
+    this.numItems = this.goals.length;
+  }
+
+  
+
 
 }
