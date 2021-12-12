@@ -1,0 +1,21 @@
+<div class= "container color-dark">
+    <div class = "col">
+        <p>Añade una meta </p>
+    </div>
+    <div class = "col">
+        <p>Tu lista de metas ({{numItems}})</p>
+    </div>
+</div>
+<div class= "container color-light">
+    <div class = "col">
+        <p class = "sm">Usa la parte de abajo para añadir tus metas</p>
+
+        <form>
+            <input type= "text" class = "txt" name="item" placeholder="Life goal..."[(ngModel)] = "meta" >
+            <input type= "submit" class = "btn" [value] = "botonTexto" (click) = "agregarItem()">
+        </form>
+    </div>
+    <div class = "col">
+        <p class = "life-container" *ngFor = "let meta of goals">{{meta}}</p>
+    </div>
+</div>
