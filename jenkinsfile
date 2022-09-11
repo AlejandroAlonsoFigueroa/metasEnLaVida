@@ -1,3 +1,5 @@
+def objetoGroovy
+
 pipeline {
     agent any
   
@@ -5,11 +7,17 @@ pipeline {
         stage('Descargar e instalar dependencias.') {
             steps {
                 sh 'npm install'
+                script{
+                  objetoGroovy = load "rutina.groovy"
+                }
+                
             }
         }
         stage('Ejecutar pruebas unitarias.') {
             steps {
-                sh 'npm run test'
+                objetoGroovy.imprimirAlgo()
+                objetoGroovy.imprimirAlgoDeNuevo()
+                echo "Imaginate que se ejecutan las pruebas unitarias"
             }
         }
          
