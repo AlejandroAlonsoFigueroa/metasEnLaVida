@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+  
+    stages {
+        stage('Descargar e instalar dependencias.') {
+            steps {
+                sh 'npm install'
+            }
+        }
+         
+    }
+    
+   
+}
