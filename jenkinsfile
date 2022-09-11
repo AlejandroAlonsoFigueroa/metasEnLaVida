@@ -15,8 +15,11 @@ pipeline {
         }
         stage('Ejecutar pruebas unitarias.') {
             steps {
-                objetoGroovy.imprimirAlgo()
-                objetoGroovy.imprimirAlgoDeNuevo()
+                script{
+                   objetoGroovy.imprimirAlgo()
+                  objetoGroovy.imprimirAlgoDeNuevo()
+                }
+               
                 echo "Imaginate que se ejecutan las pruebas unitarias"
             }
         }
