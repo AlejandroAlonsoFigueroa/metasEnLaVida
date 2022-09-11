@@ -32,7 +32,7 @@ pipeline {
          stage('Subir a nginx.') {
             steps {
                 script{
-                    sh 'docker build /Dockerfile'             
+                    sh 'docker build ./Dockerfile'             
                  }
   
             }
