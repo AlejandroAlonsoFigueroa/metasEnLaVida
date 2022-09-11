@@ -23,6 +23,20 @@ pipeline {
                 echo "Imaginate que se ejecutan las pruebas unitarias"
             }
         }
+        stage('Sacar carpeta dist.') {
+            steps {
+                sh 'ng build'
+            }
+        }
+        
+         stage('Subir a nginx.') {
+            steps {
+                script{
+                    sh 'docker build .'             
+                 }
+  
+            }
+        }
          
     }
     
